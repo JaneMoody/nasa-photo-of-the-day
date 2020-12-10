@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import DateInput from "./Components/DateInput";
 import "./App.css";
 import Photo from "./Components/Photo.js";
+import styled from "styled-components";
 
 class App extends Component {
   state = {
@@ -33,8 +34,24 @@ class App extends Component {
   };
   render() {
     return (
-      <div>
-        <h1>NASA's Picture of the day</h1>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          background: "darkgray",
+          justifyContent: "center",
+        }}
+      >
+        <h1
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            fontSize: "3rem",
+            padding: "0.25rem",
+          }}
+        >
+          NASA's Picture of the day
+        </h1>
         <DateInput changeDate={this.changeDate} />
         <Photo photo={this.state.photo} />
       </div>
